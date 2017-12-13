@@ -14,7 +14,7 @@
   width: 100%;
   height: 100px;
   position: absolute;
-  border-top: 10px solid black;
+  border-top: 10px solid #161616;
 
 }
 
@@ -38,7 +38,7 @@
   text-decoration: none;
   font-family: 'Yanone Kaffeesatz', sans-serif;
   color: #161616;
-  padding-right: 10px;
+  padding-right: 20px;
   font-size: 24px;
 }
 
@@ -117,7 +117,7 @@
   width: 300px;
   padding: 5px;
   margin: 20px;
-  border-top: 10px solid black;
+  border-top: 10px solid #161616;
 }
 
 .content_link {
@@ -166,4 +166,157 @@
   margin: 0px;
   padding: 5px;
   color: #161616;
+}
+
+//----------**GALLERY**----------//
+
+.gallery_grid {
+  margin-top:150px;
+  margin-left: 50px;
+  margin-right: 50px;
+  padding: 0px;
+  border-top: 10px solid #161616;
+  border-radius: 2px;
+  display: grid;
+  height: 100%;
+  grid-gap: 1px;
+  grid-template-columns: repeat(6, 1fr);
+  grid-auto-rows: minmax(150px, 1fr);
+}
+
+.gallery_grid > div {
+  border-radius: 3px;
+  font-size:250%;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gallery_grid > div:nth-child(1) {
+  grid-row-end: span 2;
+  grid-column-end: span 2;
+}
+
+.gallery_grid  > div:nth-child(2) {
+  grid-row-end: span 2;
+  grid-column-end: span 2;
+}
+
+.gallery_grid  > div:nth-child(3) {
+  grid-row-end: span 1;
+  grid-column-end: span 1;
+}
+
+.gallery_grid > div:nth-child(4) {
+  grid-row-end: span 1;
+  grid-column-end: span 1;
+}
+
+.gallery_grid > div:nth-child(5) {
+  grid-row-end: span 1;
+  grid-column-end: span 1;;
+}
+
+.gallery_grid > div:nth-child(6) {
+  grid-column-end: span 1;
+}
+
+.gallery_grid > div:nth-child(7) {
+  grid-row-end: span 2;
+  grid-column-end: span 1;
+}
+
+.gallery_grid > div:nth-child(8) {
+  grid-column-end: span 2;
+}
+
+.gallery_grid > div:nth-child(9) {
+  grid-row-end: span 2;
+  grid-column-end: span 3;
+}
+
+.gallery_grid > div:nth-child(10) {
+  grid-column-end: span 2;
+}
+
+
+.grid_item-1 {
+  background-image: url('img/image-1.jpg');
+  background-size: cover;
+}
+
+.grid_item-2 {
+  background-image: url('img/image-2.jpg');
+  background-size: cover;
+}
+
+.grid_item-3 {
+  background-image: url('img/image-3.jpg');
+  background-size: cover;
+}
+
+.grid_item-4 {
+  background-image: url('img/image-4.jpg');
+  background-size: cover;
+
+}
+
+.grid_item-5 {
+  background-image: url('img/image-7.jpg');
+  background-size: cover;
+}
+
+.grid_item-6 {
+  background-image: url('img/image-6.jpg');
+  background-size: cover;
+}
+
+.grid_item-7 {
+  background-image: url('img/image-5.jpg');
+  background-size: cover;
+}
+
+.grid_item-8 {
+  background-image: url('img/image-8.jpg');
+  background-size: cover;
+}
+
+.grid_item-9 {
+  background-image: url('img/image-9.jpg');
+  background-size: cover;
+}
+
+.grid_item-10 {
+  background-image: url('img/image-10.jpg');
+  background-size: cover;
+}
+
+.item_content {
+  position: relative;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.79) 0%,rgba(0,0,0,0.81) 18%,rgba(0,0,0,0.84) 39%,rgba(0,0,0,0.91) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */ ;
+  opacity: 0;
+  transition: .8s ease;
+}
+
+.item_content:hover{
+   opacity: 1;
+
+}
+
+.item_content-heading {
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  color: white;
+  font-size: 35px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
 }
