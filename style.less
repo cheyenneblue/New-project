@@ -8,7 +8,7 @@ html {
   box-sizing: inherit;
 }
 
-.block_body {
+body {
   position: relative;
   min-height: 100vh;
   padding: 0;
@@ -19,46 +19,31 @@ html {
   background: linear-gradient(to bottom, rgba(247,219,178,0.65) 0%,rgba(0,0,0,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 }
 
-//-----------**HEADER**------------//
+/*! ---- HEADER ----- */
 
 .header {
   top: 0px;
   left: 0px;
   right: 0px;
   width: 100%;
-  height: 120px;
+  height: 100px;
   position: relative;
   border-top: 10px solid #161616;
 
 }
 
 .header__caption {
-  font-family: 'Monoton', cursive;
-  font-size: 36px;
+  position: absolute;
+  font-family: 'Courgette', cursive;
+  font-size: 50px;
   padding-top: 25px;
   padding-left: 10px;
-  color: #161616;
-}
-
-.header__nav {
-  position: absolute;
-  right: 0px;
-  margin-left: 20px;
-  top: 65px;
-}
-
-
-.header__nav_caption {
-  text-decoration: none;
-  font-family: 'Yanone Kaffeesatz', sans-serif;
-  color: #161616;
-  padding-right: 20px;
-  font-size: 24px;
+  color: #771727;
 }
 
 .header__logo_animation {
-  height: 50%;
-  width: 50%;
+  height: 60%;
+  width: 60%;
   top: 5px;
   margin-left: 175px;
   position: absolute;
@@ -105,7 +90,107 @@ html {
     }
 }
 
-//-------------**MAIN**-------------//
+/*! ---- HEADER: NAV ---- */
+
+.header__nav {
+  width: 50px;
+  height: 50px;
+  margin: 0px;
+  left: 95%;
+  position: relative;
+}
+
+#nav-toggle {
+  background: transparent;
+  position: absolute;
+  top: 20px;
+  height: 50px;
+  width: 20px;
+  cursor: pointer;
+  transform: translate(0%, -50%);
+}
+
+#nav-toggle span,
+#nav-toggle span:before,
+#nav-toggle span:after {
+  cursor: pointer;
+  border-radius: 1px;
+  height: 2px;
+  width: 35px;
+  background: #771727;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  display: block;
+  content: '';
+}
+
+#nav-toggle span:before {
+  top: -10px;
+}
+
+#nav-toggle span:after {
+  top: 10px;
+}
+
+#nav-toggle span,
+#nav-toggle span:before,
+#nav-toggle span:after {
+  transition: all 0.5s ease-in-out;
+}
+
+#nav-toggle.active span {
+  background-color: transparent;
+}
+
+#nav-toggle.active span:before,
+#nav-toggle.active span:after {
+  top: 0;
+}
+
+#nav-toggle.active span:before {
+  transform: rotate(135deg);
+}
+
+#nav-toggle.active span:after {
+  transform: rotate(-135deg);
+}
+
+.dropdown-toggle {
+  padding: 5px;
+}
+ul.dropdown {
+  display: none;
+  position: absolute;
+  top: 50%;
+  margin-top: 10px;
+  margin-right: 20px;
+  min-width: 10em;
+  padding: 0px;
+    li {
+      list-style-type: none;
+      a {
+        text-decoration: none;
+        color: #161616;
+        font-size: 18px;
+        padding-right: 40px;
+        padding-bottom: 10px;
+        padding-top: 10px;
+        margin-right: 5px;
+        display: block;
+      }
+   }
+}
+
+/*! --.header__nav_caption {
+  text-decoration: none;
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  color: #161616;
+  padding-right: 20px;
+  font-size: 24px;
+} -- */
+
+/*! ---- MAIN ----- */
 
 .content__container {
   display: flex;
@@ -120,7 +205,7 @@ html {
 }
 
 .content__caption {
-  font-family: 'Yanone Kaffeesatz', sans-serif;
+  font-family: 'Courgette', cursive;
   font-size: 32px;
   color: #161616;
   padding-left: 10px;
@@ -144,12 +229,11 @@ html {
   background-color: #f9c47f;
   box-shadow: 0px 0px 41px -5px rgba(0,0,0,0.43);
 
-}
-
-.content__link:hover {
-  background-color: #f7ac4a;
-  box-shadow:  0px 0px 41px 10px rgba(0,0,0,0.43);
-  transition: all 0.8s;
+    &:hover {
+    background-color: #f7ac4a;
+    box-shadow:  0px 0px 41px 10px rgba(0,0,0,0.43);
+    transition: all 0.8s;
+  }
 }
 
 .link {
@@ -160,7 +244,7 @@ html {
   font-family: 'Yanone Kaffeesatz', sans-serif;
 }
 
-//--------**FOOTER**------------//
+/*! ---- FOOTER ----- */
 
 .footer {
   display: flex;
@@ -184,7 +268,7 @@ html {
   color: #161616;
 }
 
-//----------**GALLERY**----------//
+/*! ---- GALLERY ----- */
 
 .gallery_grid {
   margin-top: 30px;
@@ -321,213 +405,231 @@ html {
   background: linear-gradient(to bottom, rgba(0,0,0,0.79) 0%,rgba(0,0,0,0.81) 18%,rgba(0,0,0,0.84) 39%,rgba(0,0,0,0.91) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */ ;
   opacity: 0;
   transition: .8s ease;
+
+  &:hover {
+     opacity: 1;
+  }
+    &-heading {
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    color: white;
+    font-size: 35px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+  }
 }
 
-.item_content:hover{
-   opacity: 1;
+  /*! -------- MEDIA: MOBILE ----------*/
+@media(max-width: 767px) {
 
-}
+  /*! ------------ HEADER: MOBILE ------*/
 
-.item_content-heading {
-  font-family: 'Yanone Kaffeesatz', sans-serif;
-  color: white;
-  font-size: 35px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-}
+  .header {
+    height: 90px;
+    background: #f9e8cf;
+    position: fixed;
+    z-index: 2;
+  }
 
+  .header__caption {
+    font-family: 'Monoton', cursive;
+    font-size: 35px;
+    margin-top: 0px;
+    padding-top: 0px;
+    margin: 0px;
+    color: #771727;
+  }
 
+  .header__nav {
+    width: 50px;
+    height: 50px;
+    margin-top: 7px;
+    left: 83%;
+    position: relative;
+  }
 
+  ul.dropdown {
+    display: none;
+    position: absolute;
+    top: 50%;
+    margin-top: 10px;
+    margin-right: 20px;
+    min-width: 10em;
+    padding: 0px;
+      li {
+        list-style-type: none;
+        a {
+          text-decoration: none;
+          color: #161616;
+          font-size: 12px;
+          padding-right: 35px;
+          padding-bottom: 5px;
+          padding-top: 3px;
+          margin-right: 5px;
+          display: block;
+        }
+     }
+  }
 
-//----------**MEDIA: MOBILE**----------//
-@media (max-width: 767px) {
+  .header__logo_animation {
+    display: none;
+  }
 
-//------------** HEADER: MOBILE**------//
+  /*!------------ GALLERY: MOBILE ------*/
 
-.header_caption {
-  font-family: 'Monoton', cursive;
-  font-size: 16px;
-  margin-top:65px;
-  padding-left: 10px;
-  color: #161616;
-}
+  .gallery_grid {
+    margin-top:100px;
+    margin-left: 10px;
+    margin-right: 20px;
+    padding: 0px;
+    border-top: 10px solid #161616;
+    border-radius: 2px;
+    display: grid;
+    height: 100%;
+    grid-gap: 1px;
+    grid-template-columns: repeat(6, 1fr);
+    grid-auto-rows: minmax(150px, 1fr);
+    margin-bottom: 20px;
+  }
 
-.header_nav {
-  position: absolute;
-  right: 0px;
-  margin-left: 20px;
-  top: 92px;
-}
+  .gallery_grid > div {
+    border-radius: 3px;
+    font-size: 250%;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 
+  .gallery_grid > div:nth-child(1) {
+    grid-row-end: span 2;
+    grid-column-end: span 6;
+  }
 
-.nav_caption {
-  text-decoration: none;
-  font-family: 'Yanone Kaffeesatz', sans-serif;
-  color: #161616;
-  padding-right: 20px;
-  font-size: 12px;
-}
+  .gallery_grid  > div:nth-child(2) {
+    grid-row-end: span 2;
+    grid-column-end: span 6;
+  }
 
-//------------** GALLERY: MOBILE**------//
+  .gallery_grid  > div:nth-child(3) {
+    grid-row-end: span 2;
+    grid-column-end: span 6;
+  }
 
-.gallery_grid {
-  margin-top:150px;
-  margin-left: 10px;
-  margin-right: 20px;
-  padding: 0px;
-  border-top: 10px solid #161616;
-  border-radius: 2px;
-  display: grid;
-  height: 100%;
-  grid-gap: 1px;
-  grid-template-columns: repeat(6, 1fr);
-  grid-auto-rows: minmax(150px, 1fr);
-  margin-bottom: 20px;
-}
+  .gallery_grid > div:nth-child(4) {
+    grid-row-end: span 3;
+    grid-column-end: span 6;
+  }
 
-.gallery_grid > div {
-  border-radius: 3px;
-  font-size: 250%;
-  color: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+  .gallery_grid > div:nth-child(5) {
+    grid-row-end: span 2;
+    grid-column-end: span 6;;
+  }
 
-.gallery_grid > div:nth-child(1) {
-  grid-row-end: span 2;
-  grid-column-end: span 6;
-}
+  .gallery_grid > div:nth-child(6) {
+    grid-row-end: span 2;
+    grid-column-end: span 6;
+  }
 
-.gallery_grid  > div:nth-child(2) {
-  grid-row-end: span 2;
-  grid-column-end: span 6;
-}
+  .gallery_grid > div:nth-child(7) {
+    grid-row-end: span 2;
+    grid-column-end: span 6;
+  }
 
-.gallery_grid  > div:nth-child(3) {
-  grid-row-end: span 2;
-  grid-column-end: span 6;
-}
+  .gallery_grid > div:nth-child(8) {
+    grid-row-end: span 2;
+    grid-column-end: span 6;
+  }
 
-.gallery_grid > div:nth-child(4) {
-  grid-row-end: span 3;
-  grid-column-end: span 6;
-}
+  .gallery_grid > div:nth-child(9) {
+    grid-row-end: span 2;
+    grid-column-end: span 6;
+  }
 
-.gallery_grid > div:nth-child(5) {
-  grid-row-end: span 2;
-  grid-column-end: span 6;;
-}
+  .gallery_grid > div:nth-child(10) {
+    grid-row-end: span 2;
+    grid-column-end: span 6;
+  }
 
-.gallery_grid > div:nth-child(6) {
-  grid-row-end: span 2;
-  grid-column-end: span 6;
-}
+  .grid_item-1 {
+    background-image: url('img/image-1.jpg');
+    background-size: cover;
+  }
 
-.gallery_grid > div:nth-child(7) {
-  grid-row-end: span 2;
-  grid-column-end: span 6;
-}
+  .grid_item-2 {
+    background-image: url('img/image-2.jpg');
+    background-size: cover;
+  }
 
-.gallery_grid > div:nth-child(8) {
-  grid-row-end: span 2;
-  grid-column-end: span 6;
-}
+  .grid_item-3 {
+    background-image: url('img/image-3.jpg');
+    background-size: cover;
+    background-position: bottom center;
+  }
 
-.gallery_grid > div:nth-child(9) {
-  grid-row-end: span 2;
-  grid-column-end: span 6;
-}
+  .grid_item-4 {
+    background-image: url('img/image-4.jpg');
+    background-size: cover;
+    background-position: top center;
 
-.gallery_grid > div:nth-child(10) {
-  grid-row-end: span 2;
-  grid-column-end: span 6;
-}
+  }
 
+  .grid_item-5 {
+    background-image: url('img/image-7.jpg');
+    background-size: cover;
+  }
 
-.grid_item-1 {
-  background-image: url('img/image-1.jpg');
-  background-size: cover;
-}
+  .grid_item-6 {
+    background-image: url('img/image-6.jpg');
+    background-size: cover;
+  }
 
-.grid_item-2 {
-  background-image: url('img/image-2.jpg');
-  background-size: cover;
-}
+  .grid_item-7 {
+    background-image: url('img/image-5.jpg');
+    background-size: cover;
+  }
 
-.grid_item-3 {
-  background-image: url('img/image-3.jpg');
-  background-size: cover;
-  background-position: bottom center;
-}
+  .grid_item-8 {
+    background-image: url('img/image-8.jpg');
+    background-size: cover;
+  }
 
-.grid_item-4 {
-  background-image: url('img/image-4.jpg');
-  background-size: cover;
-  background-position: top center;
+  .grid_item-9 {
+    background-image: url('img/image-9.jpg');
+    background-size: cover;
+  }
 
-}
+  .grid_item-10 {
+    background-image: url('img/image-10.jpg');
+    background-size: cover;
+  }
 
-.grid_item-5 {
-  background-image: url('img/image-7.jpg');
-  background-size: cover;
-}
+  .item_content {
+    position: relative;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.79) 0%,rgba(0,0,0,0.81) 18%,rgba(0,0,0,0.84) 39%,rgba(0,0,0,0.91) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */ ;
+    opacity: 0;
+    transition: .8s ease;
 
-.grid_item-6 {
-  background-image: url('img/image-6.jpg');
-  background-size: cover;
-}
-
-.grid_item-7 {
-  background-image: url('img/image-5.jpg');
-  background-size: cover;
-}
-
-.grid_item-8 {
-  background-image: url('img/image-8.jpg');
-  background-size: cover;
-}
-
-.grid_item-9 {
-  background-image: url('img/image-9.jpg');
-  background-size: cover;
-}
-
-.grid_item-10 {
-  background-image: url('img/image-10.jpg');
-  background-size: cover;
-}
-
-.item_content {
-  position: relative;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 100%;
-  width: 100%;
-  background: linear-gradient(to bottom, rgba(0,0,0,0.79) 0%,rgba(0,0,0,0.81) 18%,rgba(0,0,0,0.84) 39%,rgba(0,0,0,0.91) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */ ;
-  opacity: 0;
-  transition: .8s ease;
-}
-
-.item_content:hover{
-   opacity: 1;
-
-}
-
-.item_content-heading {
-  font-family: 'Yanone Kaffeesatz', sans-serif;
-  color: white;
-  font-size: 35px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-}
-
+      &:hover {
+       opacity: 1;
+    }
+      &-heading {
+      font-family: 'Yanone Kaffeesatz', sans-serif;
+      color: white;
+      font-size: 35px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+    }
+  }
 }

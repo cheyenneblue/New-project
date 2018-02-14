@@ -1,20 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="ru">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Travel magazine</title>
+  <link href="https://fonts.googleapis.com/css?family=Courgette|Yanone+Kaffeesatz:400,700&amp;subset=cyrillic" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css?family=Monoton|Yanone+Kaffeesatz&amp;subset=cyrillic" rel="stylesheet">
+  <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
 </head>
-<body class="block_body">
+<body>
   <header class="header">
     <h1 class="header__caption">Travel magazine</h1>
     <div class="header__logo_animation"></div>
     <nav class="header__nav">
-      <a class="header__nav_caption" href="index.html">Главная</a>
-      <a class="header__nav_caption" href="gallery.html">Галерея</a>
+      <a id="nav-toggle" class="dropdown-toggle" href="#"><span></span></a>
+      <ul class="dropdown">
+        <li><a href="index.html">ГЛАВНАЯ</a></li>
+        <li><a href="gallery.html">ГАЛЛЕРЕЯ</a></li>
+      </ul>
     </nav>
   </header>
   <main class="gallery">
@@ -97,4 +102,6 @@
       <div class="footer__item"><h4 class="footer_text">Copyright</h4></div>
     </div>
   </footer>
+  <script src="javascript.js">
+  </script>
 </body>
