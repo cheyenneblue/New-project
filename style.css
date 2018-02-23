@@ -23,24 +23,25 @@ body {
   left: 0px;
   right: 0px;
   width: 100%;
-  height: 100px;
+  height: 110px;
   position: relative;
   border-top: 10px solid #161616;
 }
 .header__caption {
   position: absolute;
-  font-family: 'Courgette', cursive;
+  font-family: 'Anton', sans-serif;
   font-size: 50px;
-  padding-top: 25px;
+  margin-top: 0px;
+  margin-left: 50px;
   padding-left: 10px;
-  color: #771727;
+  color: #161616;
 }
 .header__logo_animation {
-  height: 60%;
-  width: 60%;
-  top: 5px;
-  margin-left: 175px;
   position: absolute;
+  height: 50px;
+  width: 50px;
+  top: 9px;
+  margin-left: 400px;
   background-image: url("svg/logo-2.svg");
   background-repeat: no-repeat;
   animation-name: animation-bg-image;
@@ -82,16 +83,15 @@ body {
 }
 /*! ---- HEADER: NAV ---- */
 .header__nav {
+  position: relative;
   width: 50px;
   height: 50px;
-  margin: 0px;
-  left: 95%;
-  position: relative;
+  top: 36px;
+  margin-left: 10px;
 }
 #nav-toggle {
   background: transparent;
   position: absolute;
-  top: 20px;
   height: 50px;
   width: 20px;
   cursor: pointer;
@@ -104,7 +104,7 @@ body {
   border-radius: 1px;
   height: 2px;
   width: 35px;
-  background: #771727;
+  background: #ce1058;
   position: absolute;
   left: 0;
   top: 50%;
@@ -160,13 +160,6 @@ ul.dropdown li a {
   margin-right: 5px;
   display: block;
 }
-/*! --.header__nav_caption {
-  text-decoration: none;
-  font-family: 'Yanone Kaffeesatz', sans-serif;
-  color: #161616;
-  padding-right: 20px;
-  font-size: 24px;
-} -- */
 /*! ---- MAIN ----- */
 .content__container {
   display: flex;
@@ -179,7 +172,7 @@ ul.dropdown li a {
   height: auto;
 }
 .content__caption {
-  font-family: 'Courgette', cursive;
+  font-family: 'Yanone Kaffeesatz', sans-serif;
   font-size: 32px;
   color: #161616;
   padding-left: 10px;
@@ -209,7 +202,7 @@ ul.dropdown li a {
 .link {
   text-decoration: none;
   font-size: 25px;
-  margin-left: 100px;
+  margin-left: 30%;
   color: #161616;
   font-family: 'Yanone Kaffeesatz', sans-serif;
 }
@@ -366,31 +359,32 @@ ul.dropdown li a {
 @media (max-width: 767px) {
   /*! ------------ HEADER: MOBILE ------*/
   .header {
-    height: 90px;
+    height: 98px;
     background: #f9e8cf;
+    border-bottom: 1px solid #161616;
     position: fixed;
     z-index: 2;
   }
   .header__caption {
-    font-family: 'Monoton', cursive;
-    font-size: 35px;
-    margin-top: 0px;
-    padding-top: 0px;
-    margin: 0px;
-    color: #771727;
+    font-family: 'Anton', sans-serif;
+    font-size: 30px;
+    margin-top: 5px;
+    margin-left: 57px;
+    padding-left: 10px;
+    color: #161616;
   }
   .header__nav {
+    position: relative;
     width: 50px;
     height: 50px;
-    margin-top: 7px;
-    left: 83%;
-    position: relative;
+    top: 27px;
+    margin-left: 10px;
   }
   ul.dropdown {
     display: none;
     position: absolute;
     top: 50%;
-    margin-top: 10px;
+    margin-top: 0px;
     margin-right: 20px;
     min-width: 10em;
     padding: 0px;
@@ -404,11 +398,19 @@ ul.dropdown li a {
     font-size: 12px;
     padding-right: 35px;
     padding-bottom: 5px;
-    padding-top: 3px;
+    padding-top: 1px;
     margin-right: 5px;
     display: block;
   }
   .header__logo_animation {
+    position: absolute;
+    height: 30px;
+    width: 30px;
+    top: 11px;
+    margin-left: 280px;
+    background-image: url("svg/logo-2.svg");
+  }
+  @keyframes animation-bg-image {
     display: none;
   }
   /*!------------ GALLERY: MOBILE ------*/
