@@ -42,6 +42,7 @@ body {
   width: 50px;
   top: 9px;
   margin-left: 400px;
+  padding-left: 30px;
   background-image: url("svg/logo-2.svg");
   background-repeat: no-repeat;
   animation-name: animation-bg-image;
